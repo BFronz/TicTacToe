@@ -68,17 +68,19 @@ export default class Game extends Component {
         return (
             <div className="game">
                 <div className="game-board">
-                    <Board  onClick={(i) => this.handleClick(i)}
-                    squares={current.squares} />
+                    <Board onClick={(i) => this.handleClick(i)}
+                        squares={current.squares} />
                 </div>
-                    <div className="game-info">
-                        <div>{status}</div>
-                        <div>{moves}</div>
-                    </div>
+                <div className="game-info">
+                    <div>{status}</div>
+                    <ul>{moves}</ul>
+                </div>
+
             </div>
         )
     }
 }
+
 
 function calculateWinner (squares) {
     const lines =[
@@ -93,7 +95,7 @@ function calculateWinner (squares) {
     ];
     for (let i=0; i<lines.length; i++){
         const [a,b,c] = lines[i];
-        if(squares[a] && squares[a] === squares[b] === squares[c]){
+        if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]){
             return squares[a];
         }
     }

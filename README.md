@@ -1,9 +1,5 @@
 ## Tic-Tac-Toe
 
-Just some fun and practice.
-
-
-
 
 
 ```
